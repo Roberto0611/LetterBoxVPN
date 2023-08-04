@@ -7,7 +7,11 @@ vpnButton.textContent = 'VPN';
 
 div.appendChild(vpnButton);
 
-//function 
+//button style
+vpnButton.style.margin = '10px';
+vpnButton.style.marginBottom = '30px';
+
+//Event listener
 vpnButton.addEventListener('click',() =>{
     alert('hi')
 })
