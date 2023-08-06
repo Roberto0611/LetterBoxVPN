@@ -8,7 +8,7 @@ const buttonContainer = document.createElement('div');
 buttonContainer.style.display = 'flex';
 buttonContainer.style.justifyContent = 'center';
 buttonContainer.style.alignItems = 'center';
-buttonContainer.style.zIndex = '1000'; // Asegurar que el contenedor del botón esté encima de otros elementos
+buttonContainer.style.zIndex = '1000'; 
 
 // add the button to the DIV
 buttonContainer.appendChild(vpnButton);
@@ -16,12 +16,12 @@ div.appendChild(buttonContainer);
 
 // button style
 vpnButton.style.margin = '10px';
-vpnButton.style.padding = '10px 20px'; // Agregar un poco de espacio interno para el botón
+vpnButton.style.padding = '10px 20px'; 
 
 // Create the element dialog
 const dialog = document.createElement('dialog');
 dialog.textContent = 'Este es el texto del diálogo.';
-dialog.style.width = '400px'; // Ancho del diálogo
+dialog.style.width = '400px'; 
 dialog.style.padding = '20px';
 dialog.style.backgroundColor = '#fff';
 
