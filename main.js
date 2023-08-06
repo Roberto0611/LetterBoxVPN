@@ -20,10 +20,13 @@ vpnButton.style.padding = '10px 20px';
 
 // Create the element dialog
 const dialog = document.createElement('dialog');
-dialog.textContent = 'Este es el texto del diálogo.';
-dialog.style.width = '400px'; 
+dialog.textContent = 'This movie is available on:';
+dialog.style.color = 'white';
+dialog.style.width = '80%'; 
+dialog.style.height = '80%'; 
 dialog.style.padding = '20px';
 dialog.style.backgroundColor = '#fff';
+dialog.style.backgroundColor = '#333333';
 
 const cerrarDialogButton = document.createElement('button');
 cerrarDialogButton.textContent = 'Cerrar';
