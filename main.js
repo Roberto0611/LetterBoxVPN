@@ -1,46 +1,48 @@
-// get button by ID
+//get ID and title of the movie
+const movieID = document.body.getAttribute('data-tmdb-id');
+const movieTitle = document.querySelector('.headline-1.js-widont.prettify').textContent;
+
+//make url for watchany
+const baseurl = 'https://watchany.stream/movie/';
+const splitTitle =  movieTitle.replace(/\s+/g, '-');
+const url = baseurl + movieID + '-' + splitTitle;
+console.log(url)
+
+// get the button by ID
 const div = document.getElementById('js-poster-col');
-const vpnButton = document.createElement('button');
-vpnButton.textContent = 'VPN';
+const openDialogButton = document.createElement('button');
+openDialogButton.textContent = 'VPN';
 
-// make the fix container for the button
-const buttonContainer = document.createElement('div');
-buttonContainer.style.display = 'flex';
-buttonContainer.style.justifyContent = 'center';
-buttonContainer.style.alignItems = 'center';
-buttonContainer.style.zIndex = '1000'; 
+// Add button to the DIV
+div.appendChild(openDialogButton);
 
-// add the button to the DIV
-buttonContainer.appendChild(vpnButton);
-div.appendChild(buttonContainer);
-
-// button style
-vpnButton.style.margin = '10px';
-vpnButton.style.padding = '10px 20px'; 
-
-// Create the element dialog
+// Create dialog
 const dialog = document.createElement('dialog');
-dialog.textContent = 'This movie is available on:';
-dialog.style.color = 'white';
 dialog.style.width = '80%'; 
 dialog.style.height = '80%'; 
-dialog.style.padding = '20px';
 dialog.style.backgroundColor = '#fff';
-dialog.style.backgroundColor = '#333333';
 
-const cerrarDialogButton = document.createElement('button');
-cerrarDialogButton.textContent = 'Cerrar';
-cerrarDialogButton.style.marginTop = '10px';
+// Create Iframe for load the webpage
+const iframe = document.createElement('iframe');
+iframe.src = url; // URL of the webpage
+iframe.style.width = '100%';
+iframe.style.height = '100%';
+iframe.style.border = 'none'; 
 
-dialog.appendChild(cerrarDialogButton);
+// add the iframe to the dialog
+dialog.appendChild(iframe);
+
+// add the dialog to the content
 div.appendChild(dialog);
 
-// click event for opening the dialog
-vpnButton.addEventListener('click', () => {
+// event click to open the dialog
+openDialogButton.addEventListener('click', () => {
   dialog.showModal();
 });
 
-// click event for closing the dialog
-cerrarDialogButton.addEventListener('click', () => {
-  dialog.close();
+// event click to close the dialog
+dialog.addEventListener('click', (event) => {
+  if (event.target === dialog) {
+    dialog.close();
+  }
 });
