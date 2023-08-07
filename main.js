@@ -55,6 +55,7 @@ const dialog = document.createElement('dialog');
 dialog.style.width = '80%'; 
 dialog.style.height = '80%'; 
 dialog.style.backgroundColor = '#fff';
+dialog.style.overflow = 'hidden'
 
 // Create Iframe for load the webpage
 const iframe = document.createElement('iframe');
