@@ -11,7 +11,41 @@ console.log(url)
 // get the button by ID
 const div = document.getElementById('js-poster-col');
 const openDialogButton = document.createElement('button');
+
+//Button style
 openDialogButton.textContent = 'VPN';
+openDialogButton.style.fontSize = '1.2rem';
+openDialogButton.style.padding = '1rem 2.5rem';
+openDialogButton.style.border = 'none';
+openDialogButton.style.outline = 'none';
+openDialogButton.style.borderRadius = '0.4rem';
+openDialogButton.style.cursor = 'pointer';
+openDialogButton.style.textTransform = 'uppercase';
+openDialogButton.style.backgroundColor = 'rgb(14, 14, 26)';
+openDialogButton.style.color = 'rgb(234, 234, 234)';
+openDialogButton.style.fontWeight = '700';
+openDialogButton.style.transition = '0.6s';
+openDialogButton.style.marginLeft = '25%';
+
+// Events for the interactions
+openDialogButton.addEventListener('mousedown', () => {
+  openDialogButton.style.transform = 'scale(0.92)';
+});
+
+openDialogButton.addEventListener('mouseup', () => {
+  openDialogButton.style.transform = 'scale(1)';
+});
+
+openDialogButton.addEventListener('mouseover', () => {
+  openDialogButton.style.background = 'linear-gradient(270deg, rgba(2, 29, 78, 0.681) 0%, rgba(31, 215, 232, 0.873) 60%)';
+  openDialogButton.style.color = 'rgb(4, 4, 38)';
+});
+
+openDialogButton.addEventListener('mouseout', () => {
+  openDialogButton.style.background = 'rgb(14, 14, 26)';
+  openDialogButton.style.color = 'rgb(234, 234, 234)';
+});
+
 
 // Add button to the DIV
 div.appendChild(openDialogButton);
