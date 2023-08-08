@@ -26,23 +26,18 @@ openDialogButton.style.fontWeight = '700';
 openDialogButton.style.marginLeft = '25%';
 
 // Events for the interactions
-// Agrega las propiedades de transición al estilo del botón
 openDialogButton.style.transition = 'color 0.3s ease-in-out';
 
-// Define los colores para el efecto de iluminación
 const originalColor = '#99aabb';
-const hoverColor = '#ffffff'; // Color más claro para iluminar
+const hoverColor = '#ffffff'; 
 
-// Agrega el evento de 'hover' al botón
 openDialogButton.addEventListener('mouseover', () => {
   openDialogButton.style.color = hoverColor;
 });
 
-// Agrega el evento cuando el mouse sale del botón
 openDialogButton.addEventListener('mouseout', () => {
-  openDialogButton.style.color = originalColor; // Vuelve al color original del texto
+  openDialogButton.style.color = originalColor; 
 });
-
 
 // Add button to the DIV
 div.appendChild(openDialogButton);
